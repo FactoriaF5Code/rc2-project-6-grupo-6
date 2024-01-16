@@ -24,8 +24,11 @@ export default function ListHotels() {
           <section key={index} className="container">
             <p className="name">{hotels.name}</p>
             <img src={hotels.photoUrl} alt="hotel" />
+            <p>{hotels.description}</p>
+            <div className="reserva">
             <p>{hotels.pricePerNight}€</p>
-            <button>reserva <ArrowForwardIosIcon/></button>
+            <button>Reserva ahora!<ArrowForwardIosIcon/></button>
+            </div>
           </section>
         );
       })}
