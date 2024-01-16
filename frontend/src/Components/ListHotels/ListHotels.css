@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+section{
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+ 
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.name {
+color: #006CE4;
+}
+
+p {
+    font-family: 'Segoe UI';
+    font-weight: bold;
+}
+
+button {
+    font-size: 32px;
+    width: 279px;
+    height: 71px;
+}
