@@ -2,28 +2,47 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 section {
+  border: 1px solid #e7e7e7;
   background-color: #fff;
   display: flex;
   justify-content: center;
+  margin: 10px 0;
 }
 
 img {
   width: 200px;
   height: 200px;
   object-fit: cover;
+  border-radius: 8px;
+  margin: 20px 0;
 }
+
+.nombre {
+  width: 200px;
+  margin: 0 20px;
+}
+
 .name {
   color: #006ce4;
+  font-size: 20px;
+}
+
+.reserva {
+  height: max-content;
+  margin-top: 150px;
 }
 
 p {
   font-family: "Segoe UI";
   font-weight: bold;
+
 }
 
-.reserva {
-
+.price {
+  display: flex;
+  justify-content: flex-end;
 }
 
 button {
@@ -37,10 +56,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
- 
 }
 
 button:hover {
-  background-color: rgba(0, 59, 149, 0.8);
+  background-color: rgba(2, 103, 255, 0.8);
 }
-

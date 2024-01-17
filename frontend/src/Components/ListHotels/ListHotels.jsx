@@ -28,7 +28,7 @@ export default function ListHotels() {
             <p>{hotels.description}</p>
             </div>
             <div className="reserva">
-            <p>{hotels.pricePerNight}€</p>
+            <p className="price">{hotels.pricePerNight}€</p>
             <button>Reserva ahora!<ArrowForwardIosIcon/></button>
             </div>
           </section>
