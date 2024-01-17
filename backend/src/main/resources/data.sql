@@ -1,8 +1,3 @@
-insert into hotels(name, description, photo_url, price_per_night) values ('Hotel Miami', 'Fabuloso', 'placeholder', 300.0 ); 
-insert into hotels(name, description, photo_url, price_per_night) values ('hotel la roca', 'un hotel', 'placeholder', 300.0 ); 
-insert into hotels(name, description, photo_url, price_per_night) values ('hotel pernambuco', 'un hotel', 'placeholder', 300.0 ); 
-insert into hotels(name, description, photo_url, price_per_night) values ('hotel tibidabo', 'un hotel', 'placeholder', 300.0 ); 
-
 INSERT INTO hotels(name, description, photo_url, price_per_night) 
 VALUES 
 ('Costa del Sol Resort', 'Resort de lujo frente al mar con spa, tres restaurantes y actividades acuáticas', 'https://static.leonardo-hotels.com/image/leonardohotelbucharestcitycenter_room_comfortdouble2_2022_4000x2600_7e18f254bc75491965d36cc312e8111f_1200x780_mobile_3.webp', 449.99),
