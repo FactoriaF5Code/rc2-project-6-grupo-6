@@ -1,7 +1,12 @@
 import "./App.css";
+import ListHotels from "./Components/ListHotels/ListHotels";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <ListHotels />
+    </>
+  );
 }
 
 export default App;
