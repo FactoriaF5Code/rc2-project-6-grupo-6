@@ -23,7 +23,7 @@ export default function ListHotels() {
         return (
           <section key={index} className="container">
             <img src={hotels.photoUrl} alt="hotel" />
-            <div className="nombre">
+            <div className="info">
             <p className="name">{hotels.name}</p>
             <p>{hotels.description}</p>
             </div>
