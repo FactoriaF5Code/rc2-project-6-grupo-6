@@ -1,0 +1,27 @@
+/* . {
+    width: auto;
+    height: 66px;
+} */
+
+.logos {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+}
+
+.copy {
+    text-align: center;
+    width: 100%;
+    font-size: 15px;  
+}
+
+.info-booking {
+    text-align: center;
+    color: rgb(189, 188, 188);
+    width: 100%;
+    font-size: 15px;
+}
+
+.booking, .kaya, .price, .agoda, .open, .renta {
+    width: 200px;
+}
