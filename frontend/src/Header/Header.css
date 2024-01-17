@@ -3,7 +3,39 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 124px;
     width: 100%;
-    background-color: blue;
+    background-color: rgba(0, 59, 149, 1);
+    padding: 0 20px; 
+}
+
+.title {
+    color: white; 
+    font-family: 'inter', sans-serif;
+}
+
+.reservations {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(0, 108, 228, 1); 
+    width: 107px;
+    height: 36px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.button-container {
+    display: flex; 
+    margin-right: 5%;
+    gap: 10%;
+}
+
+.currency {
+    color: rgba(255, 255, 255, 1); 
+    background: none; 
+    border: none; 
+    font-size: 20px;
+    appearance: none;
+    outline: none;
 }
