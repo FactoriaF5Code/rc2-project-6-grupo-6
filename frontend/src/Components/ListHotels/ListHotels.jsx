@@ -22,14 +22,14 @@ export default function ListHotels() {
       {list.map((hotels, index) => {
         return (
           <section key={index} className="container">
-            <img src={hotels.photoUrl} alt="hotel" />
+            <img className="img" src={hotels.photoUrl} alt="hotel" />
             <div className="info">
             <p className="name">{hotels.name}</p>
             <p>{hotels.description}</p>
             </div>
             <div className="reserva">
             <p className="price">{hotels.pricePerNight}€</p>
-            <button>Reserva ahora!<ArrowForwardIosIcon/></button>
+            <button className="button">Reserva ahora!<ArrowForwardIosIcon/></button>
             </div>
           </section>
         );

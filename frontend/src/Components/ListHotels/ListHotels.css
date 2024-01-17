@@ -11,7 +11,7 @@ section {
   margin: 10px 0;
 }
 
-img {
+.img {
   width: 200px;
   height: 200px;
   object-fit: cover;
@@ -48,7 +48,7 @@ p {
   margin-bottom: 5px;
 }
 
-button {
+.button {
   font-size: 30px;
   width: 235px;
   height: 65px;
@@ -61,6 +61,7 @@ button {
   align-items: center;
 }
 
-button:hover {
+.button:hover {
   background-color: rgba(2, 103, 255, 0.8);
+  cursor: pointer;
 }

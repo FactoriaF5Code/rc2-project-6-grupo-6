@@ -12,7 +12,7 @@ const Footer = () => {
       <>
         <div className="footer">
           <h2 className='copy'>Copyright © 1996–2024 Booking.com™. Todos los derechos reservados.</h2>
-          <h2 className='info'>Booking.com forma parte de Booking Holdings Inc., líder mundial en viajes online y servicios relacionados.</h2>
+          <h2 className='info-booking'>Booking.com forma parte de Booking Holdings Inc., líder mundial en viajes online y servicios relacionados.</h2>
           <div className='logos'>
             <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer">
               <img src={bookingLogo} className='booking' alt="Booking" />
