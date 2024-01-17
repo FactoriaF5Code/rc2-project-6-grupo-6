@@ -1,4 +1,3 @@
-import React from 'react';
 import "./Footer.css"
 import bookingLogo from "../assets/logos footer/bookingcom.svg";
 import pricelineLogo from "../assets/logos footer/Priceline.com-Logo.wine.svg";
