@@ -2,6 +2,7 @@ import './App.css'
 import Footer from './Footer/Footer';
 import {Header} from "./Header/Header.jsx";
 import ListHotels from "./Components/ListHotels/ListHotels";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return <>

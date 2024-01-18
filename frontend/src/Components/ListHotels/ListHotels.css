@@ -65,3 +65,7 @@ p {
   background-color: rgba(2, 103, 255, 0.8);
   cursor: pointer;
 }
+
+.img-modal {
+  width: 200px;
+}
