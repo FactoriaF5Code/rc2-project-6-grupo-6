@@ -8,8 +8,6 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers-pro";
 import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
 import { DateRangeCalendar } from "@mui/x-date-pickers-pro/DateRangeCalendar";
-import { blue } from "@mui/material/colors";
-
 
 export default function ListHotels() {
   const [list, setList] = useState([]);
@@ -17,6 +15,10 @@ export default function ListHotels() {
 
   const handleClose = () => setHotelIdToShow(-1);
   const handleShow = (id) => setHotelIdToShow(id);
+  const confirmar = () => {
+    window.confirm("Enhorabuena tu reserva se ha confirmado con exito.");
+  };
+
 
   const API = "http://localhost:8080/api/hotels";
 
@@ -71,7 +73,7 @@ export default function ListHotels() {
                 <Button variant="secondary" onClick={handleClose}>
                   Cancelar
                 </Button>
-                <Button variant="primary" onClick={handleClose}>
+                <Button variant="primary" onClick={() => {confirmar(); handleClose();}}>
                   Confirmar reserva
                 </Button>
               </Modal.Footer>
