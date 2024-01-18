@@ -9,12 +9,13 @@ import { LocalizationProvider } from "@mui/x-date-pickers-pro";
 import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
 import { DateRangeCalendar } from "@mui/x-date-pickers-pro/DateRangeCalendar";
 
+
 export default function ListHotels() {
   const [list, setList] = useState([]);
-  const [show, setShow] = useState(false);
+  const [hotelIdToShow, setHotelIdToShow] = useState(-1);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => setHotelIdToShow(-1);
+  const handleShow = (id) => setHotelIdToShow(id);
 
   const API = "http://localhost:8080/api/hotels";
 
@@ -29,33 +30,35 @@ export default function ListHotels() {
 
   return (
     <>
-      {list.map((hotels, index) => {
+      {list.map((hotel, index) => {
         return (
           <section key={index} className="container">
-            <img className="img" src={hotels.photoUrl} alt="hotel" />
+            <img className="img" src={hotel.photoUrl} alt="hotel" />
             <div className="info">
-              <p className="name">{hotels.name}</p>
-              <p>{hotels.description}</p>
+              <p className="name">{hotel.name}</p>
+              <p>{hotel.description}</p>
             </div>
             <div className="reserva">
-              <p className="price">{hotels.pricePerNight}€</p>
-              <Button className="button" variant="primary" onClick={handleShow}>
+              <p className="price">{hotel.pricePerNight}€</p>
+              <Button
+                className="button"
+                variant="primary"
+                onClick={() => {
+                  handleShow(hotel.id);
+                }}
+              >
                 Reserva ahora! <ArrowForwardIosIcon />
               </Button>
             </div>
 
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={hotelIdToShow === hotel.id} onHide={handleClose}>
               <Modal.Header closeButton>
                 <Modal.Title>Completa tu reserva</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <div className="ventana-reserva">
-                  <h2>{hotels.name}</h2>
-                  <img
-                    className="img-modal"
-                    src={hotels.photoUrl}
-                    alt="hotel"
-                  />
+                  <h2>{hotel.name}</h2>
+                  <img className="img-modal" src={hotel.photoUrl} alt="hotel" />
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DemoContainer components={["DateRangeCalendar"]}>
                       <DateRangeCalendar />
