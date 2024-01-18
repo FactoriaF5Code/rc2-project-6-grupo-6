@@ -69,3 +69,15 @@ p {
 .img-modal {
   width: 200px;
 }
+
+.titulo-modal {
+  font-family: "Segoe UI";
+  font-weight: bold;
+}
+
+.hotel-modal {
+  font-family: "Segoe UI";
+  font-weight: bold;
+  font-size: 20px;
+  color: #006ce4
+}

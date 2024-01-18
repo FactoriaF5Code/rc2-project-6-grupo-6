@@ -8,6 +8,7 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers-pro";
 import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
 import { DateRangeCalendar } from "@mui/x-date-pickers-pro/DateRangeCalendar";
+import { blue } from "@mui/material/colors";
 
 
 export default function ListHotels() {
@@ -57,7 +58,7 @@ export default function ListHotels() {
               </Modal.Header>
               <Modal.Body>
                 <div className="ventana-reserva">
-                  <h2>{hotel.name}</h2>
+                  <h2 className="hotel-modal">{hotel.name}</h2>
                   <img className="img-modal" src={hotel.photoUrl} alt="hotel" />
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DemoContainer components={["DateRangeCalendar"]}>
@@ -68,10 +69,10 @@ export default function ListHotels() {
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
-                  Close
+                  Cancelar
                 </Button>
                 <Button variant="primary" onClick={handleClose}>
-                  Save Changes
+                  Confirmar reserva
                 </Button>
               </Modal.Footer>
             </Modal>
