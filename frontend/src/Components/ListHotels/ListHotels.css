@@ -81,3 +81,17 @@ p {
   font-size: 20px;
   color: #006ce4
 }
+
+.nombre_reserva {
+  font-family: "Segoe UI";
+  font-weight: bold;
+  color: #006ce4
+}
+
+.texto_reserva{
+  font-size: 20px;
+}
+
+.fecha {
+  font-weight: lighter;
+}

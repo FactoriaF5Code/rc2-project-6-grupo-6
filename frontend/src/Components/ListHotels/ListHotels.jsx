@@ -4,16 +4,19 @@ import { useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
-import { LocalizationProvider } from "@mui/x-date-pickers-pro";
-import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
-import { DateRangeCalendar } from "@mui/x-date-pickers-pro/DateRangeCalendar";
 import { ReservasContext } from "../../Reservation/ReservasContext";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { addDays } from "date-fns";
 
 export default function ListHotels() {
   const [list, setList] = useState([]);
   const [hotelIdToShow, setHotelIdToShow] = useState(-1);
   const { reservas, setReservas } = useContext(ReservasContext);
+  const [selectedDates, setSelectedDates] = useState({
+    startDate: new Date(),
+    endDate: null,
+  });
 
   const handleClose = () => setHotelIdToShow(-1);
   const handleShow = (id) => setHotelIdToShow(id);
@@ -63,11 +66,20 @@ export default function ListHotels() {
                 <div className="ventana-reserva">
                   <h2 className="hotel-modal">{hotel.name}</h2>
                   <img className="img-modal" src={hotel.photoUrl} alt="hotel" />
-                  <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DemoContainer components={["DateRangeCalendar"]}>
-                      <DateRangeCalendar />
-                    </DemoContainer>
-                  </LocalizationProvider>
+                  <DatePicker
+                    selected={selectedDates.startDate}
+                    onChange={(dates) =>
+                      setSelectedDates({
+                        startDate: dates[0],
+                        endDate: dates[1],
+                      })
+                    }
+                    startDate={selectedDates.startDate}
+                    endDate={selectedDates.endDate}
+                    selectsRange
+                    inline
+                    minDate={new Date()}
+                  />
                 </div>
               </Modal.Body>
               <Modal.Footer>
@@ -91,6 +103,8 @@ export default function ListHotels() {
                           name: hotel.name,
                           img: hotel.photoUrl,
                           info: hotel.description,
+                          startDate: selectedDates.startDate,
+                          endDate: selectedDates.endDate,
                         },
                       ]);
                       confirmar();
