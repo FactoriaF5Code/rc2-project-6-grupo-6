@@ -17,6 +17,9 @@ export default function ListHotels() {
 
   const handleClose = () => setHotelIdToShow(-1);
   const handleShow = (id) => setHotelIdToShow(id);
+  const confirmar = () => {
+    window.confirm("Enhorabuena tu reserva se ha confirmado con exito.");
+  };
 
   const API = "http://localhost:8080/api/hotels";
 
@@ -68,7 +71,12 @@ export default function ListHotels() {
                 </div>
               </Modal.Body>
               <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button
+                  variant="secondary"
+                  onClick={() => {
+                    handleClose();
+                  }}
+                >
                   Cancelar
                 </Button>
                 <Button
@@ -76,9 +84,10 @@ export default function ListHotels() {
                   onClick={() => {
                     setReservas([...reservas, hotel]);
                     handleClose();
+                    confirmar();
                   }}
                 >
-                  Save Changes
+                  Confirmar Reserva
                 </Button>
               </Modal.Footer>
             </Modal>
