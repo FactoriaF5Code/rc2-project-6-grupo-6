@@ -82,9 +82,24 @@ export default function ListHotels() {
                 <Button
                   variant="primary"
                   onClick={() => {
-                    setReservas([...reservas, hotel]);
+                    if (
+                      !reservas.some((reserva) => reserva.name === hotel.name)
+                    ) {
+                      setReservas([
+                        ...reservas,
+                        {
+                          name: hotel.name,
+                          img: hotel.photoUrl,
+                          info: hotel.description,
+                        },
+                      ]);
+                      confirmar();
+                    } else {
+                      window.confirm(
+                        "Lo sentimos, ya has efectuado esta reserva"
+                      );
+                    }
                     handleClose();
-                    confirmar();
                   }}
                 >
                   Confirmar Reserva
