@@ -1,16 +1,19 @@
 import './Header.css';
+import { Link } from 'react-router-dom';
+
 
 function Header() {
     return (
       <header>
-        <h1 className="title">Trooking.com</h1>
-        <div className="button-container">
+        <Link to="/" className="title-link">
+          <h1 className="title">Trooking.com</h1>
+        </Link>        <div className="button-container">
         <select className="currency"> 
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
             
           </select>
-          <button className="reservations">Mis Reservas</button>
+          <Link to="/misreservas" className="reservations">Mis Reservas</Link>
         </div>
        </header>
     );

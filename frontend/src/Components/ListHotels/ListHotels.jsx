@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./ListHotels.css";
 import { useEffect } from "react";
 import Button from "react-bootstrap/Button";
@@ -8,12 +8,12 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers-pro";
 import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
 import { DateRangeCalendar } from "@mui/x-date-pickers-pro/DateRangeCalendar";
-import { blue } from "@mui/material/colors";
-
+import { ReservasContext } from "../../Reservation/ReservasContext";
 
 export default function ListHotels() {
   const [list, setList] = useState([]);
   const [hotelIdToShow, setHotelIdToShow] = useState(-1);
+  const { reservas, setReservas } = useContext(ReservasContext);
 
   const handleClose = () => setHotelIdToShow(-1);
   const handleShow = (id) => setHotelIdToShow(id);
@@ -71,8 +71,14 @@ export default function ListHotels() {
                 <Button variant="secondary" onClick={handleClose}>
                   Cancelar
                 </Button>
-                <Button variant="primary" onClick={handleClose}>
-                  Confirmar reserva
+                <Button
+                  variant="primary"
+                  onClick={() => {
+                    setReservas([...reservas, hotel]);
+                    handleClose();
+                  }}
+                >
+                  Save Changes
                 </Button>
               </Modal.Footer>
             </Modal>
