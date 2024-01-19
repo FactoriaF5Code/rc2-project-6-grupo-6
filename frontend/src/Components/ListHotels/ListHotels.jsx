@@ -9,7 +9,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { addDays } from "date-fns";
 
-export default function ListHotels() {
+export default function ListHotels({ currency }) {
   const [list, setList] = useState([]);
   const [hotelIdToShow, setHotelIdToShow] = useState(-1);
   const { reservas, setReservas } = useContext(ReservasContext);
@@ -46,7 +46,7 @@ export default function ListHotels() {
               <p>{hotel.description}</p>
             </div>
             <div className="reserva">
-              <p className="price">{hotel.pricePerNight}€</p>
+              <p className="price">{hotel.pricePerNight}{currency}</p>
               <Button
                 className="button"
                 variant="primary"
